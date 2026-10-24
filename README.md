@@ -1,12 +1,31 @@
 # BrainLink
 
-Multi-agent AI shell simulating human psyche, self-awareness, character and persistent memory (NeuroCore).
+**Multi-agent AI shell simulating human psyche with persistent NeuroCore.**
 
-## First Personality
-Winston Churchill (detailed map in `personalities/winston_churchill.json`).
+First fully loaded personality: **Winston Churchill**.
+
+## Quick Start (local)
+
+```bash
+cd backend
+pip install -r requirements.txt
+python main.py
+```
+
+Open http://localhost:8000 — chat interface with Churchill, Moral Filter toggle, NeuroCore memory.
 
 ## Architecture
-See previous design docs. Core: single persistent database as brain, modular agents per psychological factor, toggleable moral filter, episodic memory with 6-dimension scoring.
+- `personalities/winston_churchill.json` — full Personality Map (traits, traumas, Black Dog, SDT needs, Haidt foundations, episodic samples)
+- FastAPI backend with modular context injection (ready for real Grok/Gemini agents)
+- Simple NeuroCore (in-memory → replace with Postgres + pgvector)
+- Toggleable Moral Filter
+- Event scoring ready for expansion
 
-## Status
-Foundation laid. Next: backend (FastAPI + pgvector), agent orchestration, iOS/web interface.
+## Next (production)
+- Wire real LLM calls (Grok + Gemini Pro)
+- Postgres + pgvector for true episodic/semantic memory
+- Full multi-agent orchestration (trait agents, needs agent, executive)
+- iOS SwiftUI client
+- Personality generator script
+
+Repo: https://github.com/bridgeworkcz/BrainLink
